@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Typography, Grid, Box, Container } from '@material-ui/core';
+import { Typography, Grid, Box } from '@material-ui/core';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import Form from '../components/form';
@@ -21,22 +21,22 @@ const App = ({ createAppointment, globalAppointments, deleteAppointment }) => {
 		<Fragment>
 			<MuiThemeProvider theme={theme}>
 				<MuiPickersUtilsProvider utils={DateFnsUtils}>
-					<Container>
 
-						<Typography variant="h2"><Box fontWeight="fontWeightBold">Patient appointments</Box></Typography>
 
-						<Grid container spacing={3}>
-							<Grid item md={6} sm={12} xs={12}>
+					<Typography variant="h2"><Box fontWeight="fontWeightBold">Patient appointments</Box></Typography>
 
-								<Form createAppointment={createAppointment} />
+					<Grid container spacing={3}>
+						<Grid item md={6} sm={12} xs={12}>
 
-							</Grid>
-							<Grid item md={6} sm={12} xs={12}>
-								<AppointmentList globalAppointments={globalAppointments} deleteAppointment={deleteAppointment} />
-							</Grid>
+							<Form createAppointment={createAppointment} />
+
 						</Grid>
+						<Grid item md={6} sm={12} xs={12}>
+							<AppointmentList globalAppointments={globalAppointments} deleteAppointment={deleteAppointment} />
+						</Grid>
+					</Grid>
 
-					</Container>
+
 
 				</MuiPickersUtilsProvider>
 			</MuiThemeProvider>
